@@ -1,3 +1,4 @@
+
 /**
  * function to console logs of any command
  */
@@ -35,22 +36,37 @@ let createNewMD = (spawn, moment)=>{
 /**
  * commits the changes and push to the origin
  */
- let commitPush = (spawn, moment)=>{
-   let git = spawn('git');
-   console.log(git);
+ let add = (spawn, moment)=>{
 
-   // const gitAdd = spawn('git', ['add', '.']);
-   // logger(gitAdd);
-   //
-   // const gitCommit = spawn('git', ['commit', '-m', moment().format('MMMM Do YYYY')]);
-   // logger(gitCommit)
-   //
-   // const gitPush = spawn('git', ['push', 'origin', 'master']);
-   // logger(gitPush);
+   // let git = spawn('git');
+   // console.log(git);
+
+   const gitAdd = spawn('git', ['add', '.']);
+   logger(gitAdd);
+
+ }
+/**
+ * commits the changes and push to the origin
+ */
+ let commit = (spawn, moment)=>{
+
+   const gitCommit = spawn('git', ['commit', '-m', moment().format('MMMM Do YYYY')]);
+   logger(gitCommit)
+
+ }
+/**
+ * commits the changes and push to the origin
+ */
+ let push = (spawn, moment)=>{
+
+   const gitPush = spawn('git', ['push', 'origin', 'master']);
+   logger(gitPush);
  }
 
 module.exports = {
   cloneRepo: cloneRepo,
   createNewMD: createNewMD,
-  commitPush: commitPush
+  add: add,
+  commit: commit,
+  push: push
 }

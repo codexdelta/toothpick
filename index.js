@@ -13,6 +13,12 @@ if (yargs.new){
   utils.createNewMD(spawn, moment);
 }
 
-if (yargs.deploy){
-  utils.commitPush(spawn, moment);
+if (yargs.a){
+  utils.add(spawn, moment);
+}
+if (yargs.c){
+  utils.commit(spawn, moment);
+}
+if (yargs.p){
+  utils.push(spawn, moment);
 }
